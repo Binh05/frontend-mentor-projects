@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+
+:root {
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Grey-500: hsl(234, 12%, 34%);
+    --Grey-400: hsl(212, 6%, 44%);
+    --White: hsl(0, 0%, 100%);
+    --bg: #fafafa;
+
+    font-size: .9375rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    text-align: center;
+    background-color: var(--bg);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+h1 {
+    color: var(--Grey-400);
+    font-weight: 200;
+    font-size: clamp(1.6rem , 1rem + 2.56vw , 2.6rem);
+}
+
+h2 {
+    color: var(--Grey-500);
+    font-size: clamp(1.6rem , 1rem + 2.56vw , 2.6rem);
+    margin-bottom: 1.5rem;
+}
+
+p {
+    color: var(--Grey-500);
+    font-size: clamp(.85rem, .2rem + 1vw , 1.1rem);
+}
+
+header p {
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+header {
+    margin: 4rem 0;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.item {
+    background-color: var(--White);
+    text-align: left;
+    padding: 2.5rem;
+    border-radius: .3rem;
+    border-top: .4rem solid;
+    box-shadow: 0 .5rem 1rem hsla(0, 0%, 0%, 10%);
+    max-width: 25rem;
+}
+
+.items .item:nth-child(1) {
+    border-color: var(--Cyan);
+}
+
+.items .item:nth-child(2) {
+    border-color: var(--Red);
+}
+
+.items .item:nth-child(3) {
+    border-color: var(--Orange);
+}
+
+.items .item:nth-child(4) {
+    border-color: var(--Blue);
+}
+
+.img {
+    text-align: right;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: var(--Grey-500);
+    margin-bottom: .5rem;
+}
+
+.item p {
+    font-size: .9rem;
+    margin-bottom: 2.5rem;
+}
+
+.text-wrapper {
+    width: 100%;
+    text-align: left;
+}
+
+@media (min-width: 48rem) {
+    .items {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 77.76rem) {
+    .items {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .item:nth-child(3) {
+        order: 1;
+    }
+
+    .item:nth-child(1), .item:nth-child(4) {
+        transform: translateY(50%);
+    }
+}
