@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --Green: hsl(75, 94%, 57%);
+    --White: hsl(0, 0%, 100%);
+    --Grey-700: hsl(0, 0%, 20%);
+    --Grey-800: hsl(0, 0%, 12%);
+    --Grey-900: hsl(0, 0%, 8%);
+}
+
+body {
+    height: 100vh;
+    background-color: var(--Grey-900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+main {
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem;
+    color: var(--White);
+    background-color: var(--Grey-800);
+}
+
+main img {
+    width: 25%;
+    border-radius: 50%;
+    margin-bottom: .5rem;
+}
+
+main h1 {
+    font-size: 1.5rem;
+}
+
+main .location {
+    color: var(--Green);
+    margin: .5rem 0 1.8rem;
+    font-weight: 800;
+    font-size: .8rem;
+}
+
+main ul {
+    margin-top: 1.5rem;
+}
+
+main ul li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+main ul li a {
+    display: block;
+    color: var(--White);
+    background-color: var(--Grey-700);
+    padding: 1rem;
+    border-radius: .5rem;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+main ul li a:hover {
+    background-color: var(--Green);
+    color: var(--Grey-900);
+}

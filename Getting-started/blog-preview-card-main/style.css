@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&display=swap');
+:root {
+    --bg-color--: hsl(47, 88%, 63%);
+    --card-color--: hsl(0, 0%, 100%);
+    --gray-500--: hsl(0, 0%, 42%);
+    --gray-950--: hsl(0, 0%, 7%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Figtree', sans-serif;
+    font-size:  clamp(13px, 2vw, 16px);
+    background-color: var(--bg-color--);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    max-width: 320px;
+    background-color: var(--card-color--);
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid;
+    box-shadow: 8px 8px ;
+    margin: 50px;
+}
+
+.title-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.text * {
+    margin-top: 20px;
+}
+
+.text h4 {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: var(--bg-color--);
+}
+
+.date {
+    color: var(--gray-950--);
+    font-weight: 500;
+}
+
+.para {
+    color: var(--gray-500--);
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+}
+
+.avatar img {
+    margin: 0;
+    width: 30px;
+}
+
+.avatar strong {
+    margin: 0;
+    font-weight: 800;
+    color: var(--gray-950--);
+    padding-left: 10px;
+}
