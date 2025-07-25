@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+
+:root {
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 13px;
+    background-color: var(--Light-Grayish-Blue);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+
+.card {
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    background-color: white;
+    border-radius: .5rem;
+    margin: 2rem;
+}
+
+.card .img {
+    overflow: hidden;
+}
+
+.card .img img {
+    width: 123%;
+    height: 100%;
+    border-top-left-radius: .5rem;
+}
+
+.card .content-right {
+    position: relative;
+}
+
+.card .inner {
+    padding: 1.8rem;
+}
+
+.card .content-right .title {
+    color: var(--Very-Dark-Grayish-Blue);
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin-bottom: .5rem;
+}
+
+.card .content-right .description {
+    color: var(--Desaturated-Dark-Blue);
+    font-size: .85rem;
+    line-height: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.card .content-right .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.card .content-right .info .user {
+    display: flex;
+}
+
+.content-right .info .user img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.content-right .info .user .name-item {
+    margin-left: .8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-right .info .user .name-item .name {
+    color: var(--Very-Dark-Grayish-Blue);
+    font-size: .9rem;
+    margin-bottom: .2rem;
+}
+
+.content-right .info .user .name-item .date {
+    color: var(--Desaturated-Dark-Blue);
+    font-size: .85rem;
+}
+
+.content-right .info .share-item .icon-share {
+    background-color: var(--Light-Grayish-Blue);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.content-right .info .share-item {
+    z-index: 20;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.content-right .share-container  {
+    display: flex;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    padding: .9rem 1.7rem;
+    border-radius: .5rem;
+
+    position: absolute;
+    right: -15%;
+    bottom: 6.2rem;
+
+    transform: scale(0);
+    transition: transform .3s ease-in-out;
+}
+
+.content-right .share-container p {
+    letter-spacing: .2rem;
+    color: var(--Grayish-Blue);
+    text-transform: uppercase;
+}
+
+.content-right .share-container * {
+    margin: 0 .4rem;
+}
+
+.content-right .active {
+    transform: scale(1);
+}
+
+.content-right .info .share-item .icon-share.icon-active {
+    background-color: var(--Desaturated-Dark-Blue);
+}
+
+.icon-active-img img {
+    filter: brightness(10);
+}
+
+.triangle {
+    --size: 0px;
+    width: var(--size);
+    height: var(--size);
+    border-top: .9rem solid var(--Very-Dark-Grayish-Blue);
+    border-left: .9rem solid transparent;
+    border-right: .9rem solid transparent;
+    position: absolute;
+    top: 3rem;
+    left: 5.9rem;
+}
+
+@media (max-width: 451px) {
+    .card {
+        grid-template-rows: 42% 58%;
+        grid-template-columns: 1fr;
+        margin: 5rem 1.5rem;
+    }
+
+    .card .content-right {
+        overflow: hidden;
+    }
+
+    .card .content-right .inner {
+        padding-top: 1.5rem;
+        padding-bottom: 0;
+    }
+
+    .card .img img {
+        border-top-right-radius: .5rem;
+    }
+
+    .card .content-right .title {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        margin-top: 1.2rem;
+    }
+
+    .card .content-right .description {
+        font-size: .87rem;
+        font-weight: 400;
+        margin-bottom: 2.5rem;
+    }
+
+    .card .content-right .share-container {
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        height: 90px;
+        padding-left: 1.8rem;
+        gap: .4rem;
+        transform: scale(1);
+        left: 0;
+        bottom: -8rem;
+        transition: bottom 0.3s ease-in-out;
+    }
+
+    .triangle {
+        display: none;
+    }
+
+    .card .content-right .active {
+        bottom: 0;
+    }
+}

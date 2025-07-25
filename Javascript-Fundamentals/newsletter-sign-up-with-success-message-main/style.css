@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+
+:root {
+    --Red: hsl(4, 100%, 67%);
+    --Red-opacity: hsla(4, 100%, 67%, 0.2);
+    --Blue-800: hsl(234, 29%, 20%);
+    --Blue-700: hsl(235, 18%, 26%);
+    --Grey: hsl(0, 0%,58%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: var(--Blue-700);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sign-up-form, .success-container {
+    background-color: var(--White);
+    margin: 1rem;
+    max-width: 900px;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.sign-up-form {
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+
+.content-right {
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.content-right img {
+    height: 100%;
+}
+
+.content-left {
+    padding: 4.8rem 2.9rem 0 2rem;
+}
+
+.content-left h1 {
+    font-size: 3.5rem;
+    color: var(--Blue-700);
+}
+
+.container .join {
+    margin: 2rem 0;
+    line-height: 1.3rem;
+    color: var(--Blue-700);
+}
+
+.item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: .8rem;
+}
+
+.item p {
+    color: var(--Blue-700);
+}
+
+.introduct-container {
+    margin-bottom: 2rem;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.title {
+    margin-bottom: .5rem;
+    color: var(--Blue-800);
+}
+
+.noti {
+    color: var(--Red);
+    display: none;
+}
+
+.input-email input {
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1px solid var(--Grey);
+    width: 100%;
+}
+
+.input-container button {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: .5rem;
+    border: 0;
+    background-color: var(--Blue-800);
+    color: var(--White);
+    cursor: pointer;
+    outline: none;
+    transition: background-color .3s ease-in-out;
+}
+
+.hide {
+    display: none;
+}
+
+.success-container {
+    max-width: 500px;
+    padding: 3.8rem 4.4rem;
+    border-radius: 2rem;
+}
+
+.success-container h1 {
+    font-size: 3rem;
+    color: var(--Blue-800);
+    margin: 2rem 0 1rem 0;
+}
+
+.success-container p {
+    color: var(--Blue-700);
+    margin-bottom: 2.2rem;
+}
+
+.success-container p span {
+    font-weight: bold;
+}
+
+.success-container button {
+    width: 100%;
+    background-color: var(--Blue-800);
+    color: var(--White);
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 0;
+    cursor: pointer;
+}
+
+.success-container button:hover {
+    background-image: linear-gradient(to left, var(--Red), #ff5378);
+}
+
+.input-email input:focus {
+    outline: none;
+    border: 1px solid;
+}
+
+.input-container button:hover, button:focus {
+    background-image: linear-gradient(to left, var(--Red), #ff5378);
+}
+
+.input-container .valid {
+    background-color: var(--Red-opacity);
+    border-color: var(--Red);
+}
+
+.input-container .valid::placeholder {
+    color: var(--Red);
+}
+
+.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .content-left {
+        padding: 4.8rem 2.9rem 0 min(2rem, 1%);
+    }
+}
+
+@media (max-width: 500px) {
+    .sign-up-form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        margin: 0;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .sign-up-form .content-left {
+        order: 1;
+        padding: auto 3rem;
+    }
+
+    .content-left {
+        padding: 4.8rem 5vw 0 5vw;
+    }
+
+    .sign-up-form .content-right, .sign-up-form .content-right img {
+        margin: 0;
+        border-radius: 0;
+        border-bottom-right-radius: 1rem;
+        width: 100%;
+    }
+
+    .content-left button {
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    .content-left h1 {
+        font-size: 2.6rem;
+    }
+
+    .content-left {
+        padding-top: 3rem;
+    }
+
+    .success-container {
+        margin: 0;
+        min-height: 100vh;
+        border-radius: 0;
+        padding: 5rem 1.5rem 1rem 1.5rem;
+    }
+
+    .success-container h1 {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    .success-container p {
+        line-height: 1.5rem;
+    }
+
+    .success-container button {
+        margin-top: 30%;
+    }
+}
