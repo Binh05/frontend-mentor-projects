@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Contact form</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <div class="container">
+    <form action="" class="contact-form">
+      <header>
+        <h1>Contact Us</h1>
+      </header>
+      <main>
+        <div class="name">
+          <div class="form-group">
+            <label for="first-name">First Name <span>*</span></label>
+            <input type="text" name="" id="first-name" class="" >
+            <p class="valid-text hide">This field is required</p>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name <span>*</span></label>
+            <input type="text" name="" id="last-name" class="" >
+            <p class="valid-text hide">This field is required</p>
+          </div>
+        </div>
+        
+        <div class="form-group valid">
+          <label for="email">Email Address <span>*</span></label>
+          <input type="" name="" id="email" class="email" >
+          <p class="valid-text hide">This field is required</p>
+          <p id="valid-email" class="valid-text hide">Please enter a valid email address</p>
+        </div>
+
+        <div class="form-group">
+          <label>Query Type <span>*</span></label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="query-type" value="general" >
+              General Enquiry
+            </label>
+            <label>
+              <input type="radio" name="query-type" value="support" >
+              Support Request
+            </label>
+          </div>
+          <p id="query-type-valid" class="valid-text hide">Please select a query type</p>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message <span>*</span></label>
+          <textarea name="message" id="message" rows="4" class="" ></textarea>
+          <p class="valid-text hide">This field is required</p>
+        </div>
+
+        <div class="form-group">
+          <div class="consent-group">
+            <input type="checkbox" name="consent" id="consent" >
+            <label for="consent">I consent to being contacted by the team <span>*</span></label>
+          </div>
+          <p id="consent-valid" class="valid-text hide">To submit this form, please consent to being contacted</p>
+        </div>
+
+        <button type="submit">Submit</button>
+      </main>
+    </form>
+    <div class="sent">
+      <div class="title">
+        <img src="./assets/images/icon-success-check.svg" alt="success check">
+        <p class="message-sent">Message Sent!</p>
+      </div>
+      <p class="thank">
+        Thanks for completing the form. We'll be in touch soon!
+      </p>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+
+</body>
+</html>

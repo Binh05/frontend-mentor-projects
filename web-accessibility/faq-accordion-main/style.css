@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap');
+
+:root {
+    --White: hsl(0, 100%, 100%);
+    --Purple-100: hsl(275, 100%, 97%);
+    --Purple-600: hsl(292, 16%, 49%);
+    --Purple-950: hsl(292, 42%, 14%);
+    --hover: #9f2bd6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--Purple-100);
+    font-family: 'Work Sans', sans-serif;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: var(--White);
+    max-width: 320px;
+    padding: 1.7rem;
+    margin: 2rem;
+    border-radius: .7rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+}
+
+.card .header {
+    display: flex;
+}
+
+.card .star {
+    margin-right: 1rem;
+    width: 1.5rem;
+}
+
+.card .content .item .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.content .item .item-header h3 {
+    font-size: .7rem;
+    user-select: none;
+}
+
+.item img {
+    width: 1.2rem;
+    cursor: pointer;
+}
+
+.content .item .discrip p {
+    font-size: .6rem;
+    color: var(--Purple-600);
+    line-height: .8rem;
+}
+
+.discrip {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease;
+}
+
+.content .item:not(:last-child) {
+    border-bottom: 1px solid var(--Purple-100);
+}
+
+.content .item:not(:last-child) .discrip p{
+    padding: .5rem 0 1rem 0;
+}
+
+@media (hover: hover) {
+    .item .item-header:hover {
+        color: var(--hover);
+        transition: 0.1s;
+    }
+}
+
+#minus-icon {
+    display: none;
+}
+
+@media (max-width: 376px) {
+    .content .item .item-header h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .content .item .discrip p {
+        font-size: .81rem;
+        line-height: 1.3rem;
+    }
+}
