@@ -17,7 +17,7 @@ export default function Card({ data, incre, decre, quantity }) {
     <div className="max-w-[15rem] space-y-7">
       <div
         className={clsx(
-          order && "border-2 border-red-700",
+          order && "border-Red border-2",
           "relative rounded-[.5rem]",
         )}
       >
@@ -34,7 +34,7 @@ export default function Card({ data, incre, decre, quantity }) {
           <button
             onClick={incre}
             type="button"
-            className="absolute bottom-0 left-[50%] flex w-max translate-x-[-50%] translate-y-[50%] cursor-pointer gap-2 rounded-[2rem] border-[.01rem] bg-white px-8 py-1.5 hover:text-rose-500"
+            className="hover:text-Red font-Red-Hat-Text absolute bottom-0 left-[50%] flex w-max translate-x-[-50%] translate-y-[50%] cursor-pointer gap-2 rounded-[2rem] border-[.01rem] bg-white px-8 py-1.5 font-semibold"
           >
             <img src="/assets/images/icon-add-to-cart.svg" alt="add to cart" />
             Add to Cart
@@ -42,14 +42,11 @@ export default function Card({ data, incre, decre, quantity }) {
         )}
 
         {order && (
-          <div
-            type="button"
-            className="absolute bottom-0 left-[50%] flex w-[70%] translate-x-[-50%] translate-y-[50%] items-center justify-between gap-2 rounded-[2rem] bg-red-700 px-3 py-2 text-white"
-          >
+          <div className="bg-Red absolute bottom-0 left-[50%] flex w-[70%] translate-x-[-50%] translate-y-[50%] items-center justify-between gap-2 rounded-[2rem] px-3 py-2 text-white">
             <button
               onClick={decre}
               type="button"
-              className="h-5 cursor-pointer rounded-[100%] border-1 p-1 text-white hover:bg-white hover:text-red-700"
+              className="hover:text-Red h-5 cursor-pointer rounded-[100%] border-1 p-1 text-white hover:bg-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +63,7 @@ export default function Card({ data, incre, decre, quantity }) {
             <button
               onClick={incre}
               type="button"
-              className="cursor-pointer rounded-[100%] border-1 p-1 text-white hover:bg-white hover:text-red-700"
+              className="hover:text-Red cursor-pointer rounded-[100%] border-1 p-1 text-white hover:bg-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,9 +83,9 @@ export default function Card({ data, incre, decre, quantity }) {
         )}
       </div>
       <div>
-        <p className="text-sm text-rose-300">{data.category}</p>
-        <h3 className="font-bold">{data.name}</h3>
-        <p className="font-bold text-red-500">${prVal}</p>
+        <p className="text-Rose-400 text-sm">{data.category}</p>
+        <h3 className="font-semibold">{data.name}</h3>
+        <p className="text-Red font-bold">${prVal}</p>
       </div>
     </div>
   );

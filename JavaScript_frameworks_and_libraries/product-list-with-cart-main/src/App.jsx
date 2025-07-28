@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import Card from "./components/Card/Card";
 import Cart from "./components/Cart/cart";
 import axios from "axios";
-import "./styles/App.css";
+import "./App.css";
+import ItemConfirm from "./components/ItemConfirm";
 
 function App() {
   const [data, setData] = useState([]);
@@ -63,7 +64,7 @@ function App() {
   };
 
   return (
-    <div className="grid min-h-screen place-content-center bg-rose-50">
+    <div className="bg-Rose-bg font-Red-Hat-Text grid min-h-screen place-content-center">
       {confirm && (
         <div
           onClick={() => setConfirm(false)}
@@ -116,32 +117,22 @@ function App() {
               fill="#1EA575"
             />
           </svg>
-          <h3 className="mt-4 text-3xl font-bold">Order Confirmed</h3>
-          <p>We hope you enjoy your food!</p>
+          <h3 className="mt-4 mb-2 text-4xl font-bold">Order Confirmed</h3>
+          <p className="text-Rose-500">We hope you enjoy your food!</p>
           <ul className="my-8">
             {items.map((item, index) => (
-              <li className="flex items-center justify-between bg-rose-50 p-6">
-                <div className="flex items-center gap-3">
-                  <img
-                    className="h-12 w-12"
-                    src={item.image.thumbnail}
-                    alt={item.name}
-                  />
-                  <div>
-                    <h4>{item.name}</h4>
-                    <div className="space-x-4">
-                      <span>{item.quantity}x</span>
-                      <span>@ ${item.price.toFixed(2)}</span>
-                    </div>
-                  </div>
-                </div>
-                <p>${(item.quantity * item.price).toFixed(2)}</p>
-              </li>
+              <ItemConfirm item={item} key={index} />
             ))}
+            <ItemConfirm
+              totalPrice={cardsQuantity.reduce(
+                (acc, curr, i) => acc + curr * data[i]?.price,
+                0,
+              )}
+            />
           </ul>
           <button
             onClick={reStart}
-            className="w-full cursor-pointer rounded-4xl bg-red-700 py-4 text-center text-white"
+            className="bg-Red text-Rose-bg hover:bg-Rose-500 w-full cursor-pointer rounded-4xl py-4 text-center"
           >
             Start New Order
           </button>

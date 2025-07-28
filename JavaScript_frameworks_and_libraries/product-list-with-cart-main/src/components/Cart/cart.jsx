@@ -9,7 +9,7 @@ export default function Cart({
 }) {
   return (
     <div className="w-[25rem] space-y-4 rounded-[.5rem] bg-white p-4">
-      <h2 className="mb-5 text-3xl font-bold text-red-800">
+      <h2 className="text-Red mb-5 text-3xl font-bold">
         Your Cart ({totalQuan})
       </h2>
       {items.length === 0 ? (
@@ -29,26 +29,33 @@ export default function Cart({
             {items.map((item, index) => (
               <li
                 key={index}
-                className="mb-6 flex items-center justify-between border-b-[.05rem] pb-6"
+                className="border-b-Rose-100 mb-6 flex items-center justify-between border-b-[.15rem] pb-6"
               >
                 <div className="space-y-2">
-                  <h4 className="font-bold">{item.name}</h4>
+                  <h4 className="font-semibold">{item.name}</h4>
                   <div className="space-x-4">
-                    <span>{item.quantity}x</span>
-                    <span>@ ${item.price.toFixed(2)}</span>
-                    <span>${(item.quantity * item.price).toFixed(2)}</span>
+                    <span className="text-Red font-semibold">
+                      {item.quantity}x
+                    </span>
+                    <span className="text-Rose-300 font-semibold">
+                      @ ${item.price.toFixed(2)}
+                    </span>
+                    <span className="text-Rose-500 font-semibold">
+                      ${(item.quantity * item.price).toFixed(2)}
+                    </span>
                   </div>
                 </div>
                 <button
                   onClick={() => removeItem(item.index)}
                   type="button"
-                  className="cursor-pointer rounded-[100%] border-2 p-1"
+                  className="border-Rose-300 text-Rose-300 hover:border-Rose-900 hover:text-Rose-900 cursor-pointer rounded-[100%] border-2 p-1"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"
                     height="10"
                     fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 10 10"
                   >
                     <path
@@ -61,10 +68,10 @@ export default function Cart({
             ))}
           </ul>
           <div className="flex items-center justify-between">
-            <p>Order Total</p>
-            <p className="text-3xl font-bold">${totalPrice.toFixed(2)}</p>
+            <p className="text-Rose-900 font-semibold">Order Total</p>
+            <p className="text-2xl font-bold">${totalPrice.toFixed(2)}</p>
           </div>
-          <div className="mt-4 mb-3 flex justify-center gap-2 py-3">
+          <div className="bg-Rose-bg mt-6 mb-8 flex justify-center gap-2 py-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="21"
@@ -81,15 +88,18 @@ export default function Cart({
                 d="M14.25 18.75h-1.875a1.25 1.25 0 0 1-1.25-1.25v-6.875h3.75a2.498 2.498 0 0 0 2.488-2.747 2.594 2.594 0 0 0-2.622-2.253h-.99l-.11-.487C13.283 3.56 11.769 2.5 9.875 2.5a3.762 3.762 0 0 0-3.4 2.179l-.194.417-.54-.072A1.876 1.876 0 0 0 5.5 5a2.5 2.5 0 1 0 0 5v1.25a3.75 3.75 0 0 1 0-7.5h.05a5.019 5.019 0 0 1 4.325-2.5c2.3 0 4.182 1.236 4.845 3.125h.02a3.852 3.852 0 0 1 3.868 3.384 3.75 3.75 0 0 1-3.733 4.116h-2.5V17.5h1.875v1.25Z"
               />
             </svg>
-            <p>
-              This is a <span className="font-bold">carbon-neutral</span>{" "}
+            <p className="text-Rose-500">
+              This is a{" "}
+              <span className="text-Rose-900 font-semibold">
+                carbon-neutral
+              </span>{" "}
               delivery
             </p>
           </div>
           <button
             onClick={confirmBtn}
             type="button"
-            className="mb-4 w-full cursor-pointer rounded-4xl bg-red-700 px-12 py-3"
+            className="bg-Red text-Rose-bg hover:bg-Rose-500 mb-4 w-full cursor-pointer rounded-4xl px-12 py-3"
           >
             Confirm Order
           </button>
