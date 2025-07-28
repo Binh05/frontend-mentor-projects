@@ -1,20 +1,12 @@
 import { useState } from "react";
 
 export default function Cart({
-  cards,
-  data,
+  items,
   totalQuan,
   totalPrice,
   removeItem,
+  confirmBtn,
 }) {
-  const items = data
-    .map((item, index) => ({
-      ...item,
-      quantity: cards[index],
-      index,
-    }))
-    .filter((item) => item.quantity > 0);
-
   return (
     <div className="w-[25rem] space-y-4 rounded-[.5rem] bg-white p-4">
       <h2 className="mb-5 text-3xl font-bold text-red-800">
@@ -95,6 +87,7 @@ export default function Cart({
             </p>
           </div>
           <button
+            onClick={confirmBtn}
             type="button"
             className="mb-4 w-full cursor-pointer rounded-4xl bg-red-700 px-12 py-3"
           >
