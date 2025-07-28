@@ -5,6 +5,14 @@ export default function Card({ data, incre, decre, quantity }) {
   const prVal = Number(data.price).toFixed(2);
   const [order, setOrder] = useState(false);
 
+  useEffect(() => {
+    if (quantity === 0) {
+      setOrder(false);
+    } else {
+      setOrder(true);
+    }
+  }, [quantity]);
+
   return (
     <div className="max-w-[15rem] space-y-7">
       <div
@@ -24,7 +32,7 @@ export default function Card({ data, incre, decre, quantity }) {
         </picture>
         {!order && (
           <button
-            onClick={() => setOrder(true)}
+            onClick={incre}
             type="button"
             className="absolute bottom-0 left-[50%] flex w-max translate-x-[-50%] translate-y-[50%] cursor-pointer gap-2 rounded-[2rem] border-[.01rem] bg-white px-8 py-1.5 hover:text-rose-500"
           >

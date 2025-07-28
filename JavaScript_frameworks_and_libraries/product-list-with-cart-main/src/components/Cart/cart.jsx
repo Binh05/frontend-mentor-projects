@@ -1,18 +1,25 @@
 import { useState } from "react";
 
-export default function Cart({ cards, data }) {
-  const [empty, setEmpty] = useState(true);
-
+export default function Cart({
+  cards,
+  data,
+  totalQuan,
+  totalPrice,
+  removeItem,
+}) {
   const items = data
     .map((item, index) => ({
       ...item,
       quantity: cards[index],
+      index,
     }))
     .filter((item) => item.quantity > 0);
 
   return (
     <div className="w-[25rem] space-y-4 rounded-[.5rem] bg-white p-4">
-      <h2 className="text-xl font-bold text-red-800">Your Cart (0)</h2>
+      <h2 className="mb-5 text-3xl font-bold text-red-800">
+        Your Cart ({totalQuan})
+      </h2>
       {items.length === 0 ? (
         <>
           <img
@@ -41,6 +48,7 @@ export default function Cart({ cards, data }) {
                   </div>
                 </div>
                 <button
+                  onClick={() => removeItem(item.index)}
                   type="button"
                   className="cursor-pointer rounded-[100%] border-2 p-1"
                 >
@@ -60,9 +68,9 @@ export default function Cart({ cards, data }) {
               </li>
             ))}
           </ul>
-          <div className="flex justify-between">
+          <div className="flex items-center justify-between">
             <p>Order Total</p>
-            <p>priceTotal</p>
+            <p className="text-3xl font-bold">${totalPrice.toFixed(2)}</p>
           </div>
           <div className="mt-4 mb-3 flex justify-center gap-2 py-3">
             <svg
