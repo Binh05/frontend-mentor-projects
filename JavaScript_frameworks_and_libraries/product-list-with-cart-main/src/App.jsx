@@ -95,7 +95,7 @@ function App() {
         </div>
       </div>
       {confirm && (
-        <div className="fixed top-[50%] left-[50%] z-2 w-[37rem] translate-[-50%] bg-white p-6">
+        <div className="fixed top-[50%] left-[50%] z-2 max-h-[80vh] w-[37rem] translate-[-50%] overflow-y-auto rounded-[.5rem] bg-white p-6">
           <svg
             width="48"
             height="48"
