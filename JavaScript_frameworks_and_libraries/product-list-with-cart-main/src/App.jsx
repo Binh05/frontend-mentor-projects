@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Card from "./components/Card/Card";
 import Cart from "./components/Cart/cart";
 import axios from "axios";
-import clsx from "clsx";
 import "./styles/App.css";
 
 function App() {
@@ -56,6 +55,11 @@ function App() {
       update[index] = 0;
       return update;
     });
+  };
+
+  const reStart = () => {
+    setCardsQuantity((prev) => prev.map(() => 0));
+    setConfirm(false);
   };
 
   return (
@@ -136,7 +140,7 @@ function App() {
             ))}
           </ul>
           <button
-            onClick={() => setConfirm(false)}
+            onClick={reStart}
             className="w-full cursor-pointer rounded-4xl bg-red-700 py-4 text-center text-white"
           >
             Start New Order
