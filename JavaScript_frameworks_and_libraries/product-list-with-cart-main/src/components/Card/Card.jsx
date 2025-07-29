@@ -34,7 +34,7 @@ export default function Card({ data, incre, decre, quantity }) {
           <button
             onClick={incre}
             type="button"
-            className="hover:text-Red font-Red-Hat-Text absolute bottom-0 left-[50%] flex w-max max-w-[100%] shrink translate-x-[-50%] translate-y-[50%] cursor-pointer gap-2 rounded-[2rem] border-[.01rem] bg-white px-4 py-1.5 font-semibold"
+            className="hover:text-Red font-Red-Hat-Text absolute bottom-0 left-[50%] flex w-max max-w-[100%] shrink translate-x-[-50%] translate-y-[50%] cursor-pointer gap-2 rounded-[2rem] border-[.01rem] bg-white px-5 py-1.5 font-semibold"
           >
             <img src="/assets/images/icon-add-to-cart.svg" alt="add to cart" />
             Add to Cart
@@ -42,7 +42,7 @@ export default function Card({ data, incre, decre, quantity }) {
         )}
 
         {order && (
-          <div className="bg-Red absolute bottom-0 left-[50%] flex w-[70%] translate-x-[-50%] translate-y-[50%] items-center justify-between gap-2 rounded-[2rem] px-3 py-2 text-white">
+          <div className="bg-Red absolute bottom-0 left-[50%] flex w-[50%] translate-x-[-50%] translate-y-[50%] items-center justify-between gap-2 rounded-[2rem] px-3 py-2 text-white">
             <button
               onClick={decre}
               type="button"

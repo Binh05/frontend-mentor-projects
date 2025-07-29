@@ -4,6 +4,7 @@ import Cart from "./components/Cart/cart";
 import axios from "axios";
 import "./App.css";
 import ItemConfirm from "./components/ItemConfirm";
+import clsx from "clsx";
 
 function App() {
   const [data, setData] = useState([]);
@@ -71,7 +72,7 @@ function App() {
           className="fixed top-0 left-0 z-[2] h-[100vh] w-full bg-black opacity-[60%] content-['']"
         ></div>
       )}
-      <div className="mx-28 my-16 flex flex-4 grow-3 flex-col gap-8 md:flex-col lg:flex-row">
+      <div className="mx-6 my-16 flex flex-4 grow-3 flex-col gap-8 md:mx-28 md:flex-col lg:flex-row">
         <div>
           <h1 className="mb-4 text-3xl font-bold">Desserts</h1>
           <div className="grid flex-1 grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
@@ -99,8 +100,21 @@ function App() {
           />
         </div>
       </div>
-      {confirm && (
-        <div className="fixed top-[50%] left-[50%] z-2 max-h-[80vh] w-[37rem] translate-[-50%] overflow-y-auto rounded-[.5rem] bg-white p-6">
+      {
+        <div
+          className={clsx(
+            {
+              "bottom-[-100%]": !confirm,
+              "bottom-0": confirm,
+            },
+            {
+              "md:pointer-events-none md:opacity-0": !confirm,
+              "md:pointer-events-auto md:opacity-100": confirm,
+            },
+            "fixed left-0 z-2 max-h-[100vh] w-[100%] overflow-y-auto rounded-t-[.5rem] bg-white p-6 transition-[bottom] duration-400 ease-in-out",
+            "md:top-[50%] md:bottom-[auto] md:left-[50%] md:max-h-[88vh] md:w-[37rem] md:translate-[-50%] md:rounded-b-[.5rem] md:transition-opacity md:duration-300 md:ease-linear",
+          )}
+        >
           <svg
             width="48"
             height="48"
@@ -119,7 +133,7 @@ function App() {
           </svg>
           <h3 className="mt-4 mb-2 text-4xl font-bold">Order Confirmed</h3>
           <p className="text-Rose-500">We hope you enjoy your food!</p>
-          <ul className="my-8">
+          <ul className="my-8 overflow-y-auto">
             {items.map((item, index) => (
               <ItemConfirm item={item} key={index} />
             ))}
@@ -137,7 +151,7 @@ function App() {
             Start New Order
           </button>
         </div>
-      )}
+      }
     </div>
   );
 }

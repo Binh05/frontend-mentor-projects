@@ -9,8 +9,8 @@ export default function ItemConfirm({ item, totalPrice }) {
               src={item.image.thumbnail}
               alt={item.name}
             />
-            <div>
-              <h4 className="font-semibold">{item.name}</h4>
+            <div className="overflow-hidden text-ellipsis whitespace-nowrap">
+              <h4 className="inline font-semibold">{item.name}</h4>
               <div className="space-x-4">
                 <span className="text-Red font-semibold">{item.quantity}x</span>
                 <span className="text-Rose-300 font-semibold">
