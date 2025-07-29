@@ -71,10 +71,10 @@ function App() {
           className="fixed top-0 left-0 z-[2] h-[100vh] w-full bg-black opacity-[60%] content-['']"
         ></div>
       )}
-      <div className="my-16 flex gap-8">
+      <div className="mx-28 my-16 flex flex-4 grow-3 flex-col gap-8 md:flex-col lg:flex-row">
         <div>
           <h1 className="mb-4 text-3xl font-bold">Desserts</h1>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid flex-1 grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
             {data.map((item, index) => (
               <Card
                 key={index}
@@ -86,7 +86,7 @@ function App() {
             ))}
           </div>
         </div>
-        <div>
+        <div className="mx-auto flex w-[calc((100%-1rem)/1)] max-w-[25rem] shrink-0 items-start md:w-[calc((100%-1rem)/2)] xl:w-[calc((100%-2rem)/3)]">
           <Cart
             items={items}
             totalQuan={cardsQuantity.reduce((a, b) => a + b, 0)}

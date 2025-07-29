@@ -14,7 +14,7 @@ export default function Card({ data, incre, decre, quantity }) {
   }, [quantity]);
 
   return (
-    <div className="max-w-[15rem] space-y-7">
+    <div className="max-w-[25rem] space-y-7">
       <div
         className={clsx(
           order && "border-Red border-2",
@@ -34,7 +34,7 @@ export default function Card({ data, incre, decre, quantity }) {
           <button
             onClick={incre}
             type="button"
-            className="hover:text-Red font-Red-Hat-Text absolute bottom-0 left-[50%] flex w-max translate-x-[-50%] translate-y-[50%] cursor-pointer gap-2 rounded-[2rem] border-[.01rem] bg-white px-8 py-1.5 font-semibold"
+            className="hover:text-Red font-Red-Hat-Text absolute bottom-0 left-[50%] flex w-max max-w-[100%] shrink translate-x-[-50%] translate-y-[50%] cursor-pointer gap-2 rounded-[2rem] border-[.01rem] bg-white px-4 py-1.5 font-semibold"
           >
             <img src="/assets/images/icon-add-to-cart.svg" alt="add to cart" />
             Add to Cart

@@ -8,7 +8,7 @@ export default function Cart({
   confirmBtn,
 }) {
   return (
-    <div className="w-[25rem] space-y-4 rounded-[.5rem] bg-white p-4">
+    <div className="w-[100%] space-y-4 rounded-[.5rem] bg-white p-4">
       <h2 className="text-Red mb-5 text-3xl font-bold">
         Your Cart ({totalQuan})
       </h2>
