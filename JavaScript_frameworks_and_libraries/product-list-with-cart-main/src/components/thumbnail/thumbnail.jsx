@@ -50,7 +50,7 @@ export default function Thumbnail({
         <p className="text-Rose-500">We hope you enjoy your food!</p>
         <ul className="my-8">
           <li>
-            <ul className="max-h-[7rem] overflow-y-auto md:max-h-[14rem]">
+            <ul className="max-h-[14rem] overflow-y-auto">
               {items.map((item, index) => (
                 <ItemConfirm item={item} key={index} />
               ))}
