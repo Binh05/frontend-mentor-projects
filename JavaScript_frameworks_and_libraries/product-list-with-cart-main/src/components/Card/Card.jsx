@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 
-export default function Card({ data, incre, decre, quantity }) {
+export default function Card({ data, incre, decre }) {
   const prVal = Number(data.price).toFixed(2);
   const [order, setOrder] = useState(false);
 
   useEffect(() => {
-    if (quantity === 0) {
+    if (data.quantity === 0) {
       setOrder(false);
     } else {
       setOrder(true);
     }
-  }, [quantity]);
+  }, [data.quantity]);
 
   return (
     <div className="max-w-[25rem] space-y-7">
@@ -59,7 +59,7 @@ export default function Card({ data, incre, decre, quantity }) {
                 <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" />
               </svg>
             </button>
-            {quantity}
+            {data.quantity}
             <button
               onClick={incre}
               type="button"
