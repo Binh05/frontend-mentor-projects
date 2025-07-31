@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 import CardList from "./components/Card/CardList";
-import Cart from "./components/Cart/Cart";
+import Cart from "./components/Cart/cart";
 import Thumbnail from "./components/thumbnail/thumbnail";
 
 function App() {
