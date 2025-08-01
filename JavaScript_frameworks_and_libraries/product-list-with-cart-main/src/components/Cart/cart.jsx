@@ -1,6 +1,13 @@
 import CartItem from "./CartItem";
 
-export default function Cart({ data, items, removeItem, confirmBtn }) {
+export default function Cart({
+  data,
+  items,
+  totalQuan,
+  totalPrice,
+  removeItem,
+  confirmBtn,
+}) {
   return (
     <div className="mx-auto flex w-[calc((100%-1rem)/1)] max-w-[25rem] shrink-0 items-start md:w-[calc((100%-1rem)/2)] xl:w-[calc((100%-2rem)/3)]">
       <CartItem

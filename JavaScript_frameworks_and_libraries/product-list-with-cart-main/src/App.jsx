@@ -9,6 +9,8 @@ function App() {
   const [data, setData] = useState([]);
   //const [quantity, setQuantity] = useState([]);
   const [confirm, setConfirm] = useState(false);
+  const [totalQuantity, setTotalQuantity] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const items = data
     .map((item, index) => ({
@@ -67,6 +69,13 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    setTotalQuantity(data.reduce((acc, item) => acc + item.quantity, 0));
+    setTotalPrice(
+      data.reduce((acc, item) => acc + item.quantity * item.price, 0),
+    );
+  }, [data]);
+
   const removeItem = (index) => {
     setData((pre) => {
       const update = [...pre];
@@ -94,6 +103,8 @@ function App() {
         <Cart
           data={data}
           items={items}
+          totalQuan={totalQuantity}
+          totalPrice={totalPrice}
           removeItem={removeItem}
           confirmBtn={confirmBtn}
         />
@@ -101,10 +112,7 @@ function App() {
       {
         <Thumbnail
           items={items}
-          totalPrice={data.reduce(
-            (acc, item) => acc + item.quantity * item.price,
-            0,
-          )}
+          totalPrice={totalPrice}
           reStart={reStart}
           confirm={confirm}
           setConfirm={confirmBtn}
