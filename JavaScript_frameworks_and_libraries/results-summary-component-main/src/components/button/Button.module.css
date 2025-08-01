@@ -1,0 +1,13 @@
+.button {
+  background-color: hsl(224, 30%, 27%);
+  padding: 1rem;
+  text-align: center;
+  border-radius: 2rem;
+  width: 100%;
+  color: hsl(0, 0%, 100%);
+  font-weight: 550;
+}
+
+.button:hover {
+  background-image: linear-gradient(to top, hsl(241, 81%, 54%), hsl(252, 100%, 67%));
+}/*# sourceMappingURL=Button.module.css.map */

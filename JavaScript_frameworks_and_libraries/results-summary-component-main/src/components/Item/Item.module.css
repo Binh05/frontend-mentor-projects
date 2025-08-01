@@ -1,0 +1,42 @@
+.item {
+  display: flex;
+  margin-block: 1rem;
+  padding-block: 0.7rem;
+  padding-inline: 0.7rem;
+  border-radius: 0.7rem;
+  justify-content: space-between;
+}
+.item.reaction {
+  background-color: hsla(0, 100%, 67%, 0.1);
+}
+.item.reaction h3 {
+  color: hsl(0, 100%, 67%);
+}
+.item.memory {
+  background-color: hsla(39, 100%, 56%, 0.1);
+}
+.item.memory h3 {
+  color: hsl(39, 100%, 56%);
+}
+.item.verbal {
+  background-color: hsla(166, 100%, 37%, 0.1);
+}
+.item.verbal h3 {
+  color: hsl(166, 100%, 37%);
+}
+.item.visual {
+  background-color: hsla(234, 85%, 45%, 0.1);
+}
+.item.visual h3 {
+  color: hsl(234, 85%, 45%);
+}
+
+.limit {
+  color: hsl(241, 100%, 89%);
+  font-weight: 500;
+}
+
+.score {
+  color: black;
+  font-weight: bold;
+}/*# sourceMappingURL=Item.module.css.map */

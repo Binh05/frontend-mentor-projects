@@ -1,0 +1,15 @@
+@use '../../style/variable' as *;
+
+.button {
+    background-color: $Dark-gray-blue;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 2rem;
+    width: 100%;
+    color: $White;
+    font-weight: 550;
+}
+
+.button:hover {
+    background-image: $bg-gradient;
+}

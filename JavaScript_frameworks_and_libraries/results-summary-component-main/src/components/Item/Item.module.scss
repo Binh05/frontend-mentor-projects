@@ -1,0 +1,45 @@
+@use '../../style/variable' as *;
+
+@mixin colorCategory($bg-color, $color) {
+    background-color: $bg-color;
+    
+    h3 {
+        color: $color;
+    }
+}
+
+.item {
+    display: flex;
+    margin-block: 1rem;
+    padding-block: .7rem;
+    padding-inline: .7rem;
+    border-radius: .7rem;
+    justify-content: space-between;
+
+    &.reaction {
+        @include colorCategory($bg-red, $Light-red);
+        
+    }
+
+    &.memory {
+        @include colorCategory($bg-yellow, $Orangey-yellow);
+    }
+
+    &.verbal {
+        @include colorCategory($bg-teal, $Green-teal);
+    }
+
+    &.visual {
+        @include colorCategory($bg-blue, $Cobalt-blue);
+    }
+}
+
+.limit {
+    color: $Light-lavender;
+    font-weight: 500;
+}
+
+.score {
+    color: black;
+    font-weight: bold;
+}

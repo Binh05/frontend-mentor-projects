@@ -1,0 +1,68 @@
+@use './typography' as *;
+@use './variable' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: $Pale-blue;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 47rem;
+    background-color: $White;
+    border-radius: 2rem;
+}
+
+.result {
+    text-align: center;
+    background-image: $bg-gradient;
+    border-radius: 2rem;
+    padding: 2rem;
+
+    &__title {
+        color: $Light-lavender;
+        margin-block-end: 2rem;
+        font-size: 2rem;
+    }
+
+    &__gt {
+        color: $White;
+        font-size: 2rem;
+        margin-block-start: 2rem;
+    }
+
+    &__text {
+        margin-block: 1rem;
+        color: $Light-lavender;
+        font-size: $font-para;
+        width: 83%;
+        margin-inline: auto;
+    }
+}
+
+.summary {
+    padding: 2rem;
+
+    &__title {
+        font-size: 2rem;
+        color: $Dark-gray-blue;
+        margin-block-end: 2rem;
+    }
+}
+
+.items {
+    margin-block-end: 3rem;
+}
+
+@media (max-width: 47rem) {
+    .card {
+        grid-template-columns: 1fr;
+    }
+}
