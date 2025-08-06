@@ -1,0 +1,84 @@
+.feature-card {
+    flex-shrink: 0;
+    width: 100%;
+    gap: max(.5rem, 9.35vw);
+    display: none;
+
+    &--active {
+        display: flex;
+        animation: opacity 2s ease-in-out forwards;
+    }
+
+    &__img {
+        position: relative;
+
+        .feature-card--active &::before {
+            @include under-background(ltr);
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-block-start: 3.5rem;
+        max-width: 29rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: $weight-500;
+        color: $color-blue;
+    }
+
+    &__desc {
+        text-align: left;
+        margin-block: 2rem;
+        padding-inline-end: 2rem;
+        color: $color-para;
+        font-weight: $weight-400;
+        line-height: 1.6;
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes unvisible {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@media (max-width: $media) {
+    .features__content {
+        padding-inline: $padding-mobile;
+        gap: $padding-mobile * 2;
+    }
+
+    .feature-card {
+        &__info {
+            align-items: center;
+            margin-inline: auto;
+        }
+
+        &__desc {
+            padding-inline: .5rem;
+            text-align: center;
+        }
+
+    }
+
+    .btn-mb-hidden {
+        display: none;
+    }
+}

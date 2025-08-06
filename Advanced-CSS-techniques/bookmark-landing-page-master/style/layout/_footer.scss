@@ -1,0 +1,115 @@
+.site-footer {
+    background-color: $color-primary;
+    margin-block-start: 10rem;
+    padding-block-start: 5rem;
+}
+
+.cta {
+    text-align: center;
+
+    &__note {
+        color: $color-grey;
+        text-transform: uppercase;
+        letter-spacing: .5rem;
+        font-size: .8rem;
+    }
+
+    &__title {
+        color: $color-grey;
+        font-size: $font-size-2;
+        font-weight: $weight-400;
+        margin-block: 3rem;
+        margin-inline: auto;
+        max-width: 30rem;
+        line-height: 1.5;
+    }
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+%footer-nav__inner {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    color: $color-grey;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-blue;
+    padding-inline: $padding-left;
+    padding-block: 2rem;
+
+    &__inner {
+        @extend %footer-nav__inner;
+
+        img {
+            background-color: $color-grey
+        }
+    }
+
+    &__list {
+        @extend %footer-nav__inner;
+
+        & li:hover {
+            @include hover-text;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    &__text {
+        &:hover {
+            @include hover-text;
+        }
+    }
+}
+
+.icon-svg {
+    color: $color-grey;
+
+    svg {
+        fill: currentColor;
+    }
+
+    &:hover {
+        color: $color-secondary;
+    }
+}
+
+@media (max-width: $media) {
+    .cta__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 10rem;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        &__inner {
+            flex-direction: column;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            margin-block-end: 4rem;
+        }
+
+        &__text {
+            color: $color-grey;
+        }
+    }
+}

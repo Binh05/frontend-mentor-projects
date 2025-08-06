@@ -1,0 +1,62 @@
+@mixin btn($bg-color) {
+
+    color: $color-grey;
+    background-color: $bg-color;
+    border: .1rem solid $bg-color;
+    padding-inline: 1.5rem;
+    padding-block: 1rem;
+    border-radius: .3rem;
+    box-shadow: 0 .5rem .5rem $color-shadow;
+    font-weight: bold;
+
+    &:hover {
+        border: .1rem solid $bg-color;
+        background-color: $color-grey;
+        color: $bg-color
+    }
+}
+
+@mixin under-background($direction) {
+    content: '';
+    width: 80%;
+    height: 90%;
+    position: absolute;
+    bottom: -8%;
+    background-color: $color-primary;
+    z-index: -1;
+
+    @if $direction == ltr {
+        border-end-end-radius: 35%;
+        border-start-end-radius: 100%;
+        width: 110%;
+        left:  -$padding-left;
+        @media (max-width: $media) {
+            left: -$padding-mobile;
+            width: 90%;
+        }
+    }
+    @else {
+        border-end-start-radius: 35%;
+        right: 0;
+    }
+}
+
+@mixin title {
+    font-size: $font-size-2;
+    font-weight: $weight-500;
+    color: $color-blue;
+    margin-block-end: 1.5rem;
+}
+
+@mixin desc {
+    max-width: 34rem;
+    margin-inline: auto;
+    color: $color-para;
+    font-weight: $weight-400;
+    margin-block-end: 3rem;
+    line-height: 1.6;
+}
+
+@mixin hover-text {
+    color: $color-secondary;
+}

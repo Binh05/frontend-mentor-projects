@@ -1,0 +1,18 @@
+button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: $font-size-base;
+}
+
+.btn {
+    @include btn($color-primary);
+    &--secondary {
+        @include btn($color-secondary);
+    }
+
+    &--outline {
+        padding-inline: 2rem;
+        text-transform: uppercase;
+    }
+}

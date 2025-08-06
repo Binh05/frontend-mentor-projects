@@ -1,0 +1,44 @@
+.accordion {
+    max-width: 36rem;
+    margin-inline: auto;
+    margin-block-end: 5rem;
+
+    &__item {
+        padding-block: 2rem;
+        border-block: $hr;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        -webkit-tap-highlight-color: transparent;
+
+        &:hover {
+            @include hover-text;
+        }
+    }
+
+    &__bottom {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .3s ease;
+    }
+
+    &__panel {
+        line-height: 2;
+        padding-block-start: 1rem;
+        text-align: left;
+        color: $color-para;
+    }
+}
+
+.toggle-icon {
+    stroke: $color-arrow;
+    transition: transform .3s ease;
+
+    &--active {
+        stroke: $color-secondary;
+        transform: rotate(180deg);
+    }
+}
