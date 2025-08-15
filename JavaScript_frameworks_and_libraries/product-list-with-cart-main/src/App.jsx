@@ -1,16 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import "./App.css";
 import CardList from "./components/Card/CardList";
 import Cart from "./components/Cart/cart";
 import Thumbnail from "./components/thumbnail/thumbnail";
+import { ProductContext } from "./stores/productContext";
 
 function App() {
-  const [data, setData] = useState([]);
+  //const [data, setData] = useState([]);
   //const [quantity, setQuantity] = useState([]);
   const [confirm, setConfirm] = useState(false);
   const [totalQuantity, setTotalQuantity] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+
+  const data = useContext(ProductContext);
 
   const items = data
     .map((item, index) => ({
@@ -51,23 +54,23 @@ function App() {
     // });
   };
 
-  useEffect(() => {
-    axios
-      .get("/data.json")
-      .then((res) => {
-        setData(() =>
-          res.data.map((data) => ({
-            ...data,
-            quantity: 0,
-            setOrder: false,
-          })),
-        );
-        //setQuantity((q) => q.map(() => 0));
-      })
-      .catch((error) => {
-        console.error("error:", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("/data.json")
+  //     .then((res) => {
+  //       setData(() =>
+  //         res.data.map((data) => ({
+  //           ...data,
+  //           quantity: 0,
+  //           setOrder: false,
+  //         })),
+  //       );
+  //       //setQuantity((q) => q.map(() => 0));
+  //     })
+  //     .catch((error) => {
+  //       console.error("error:", error);
+  //     });
+  // }, []);
 
   useEffect(() => {
     setTotalQuantity(data.reduce((acc, item) => acc + item.quantity, 0));
