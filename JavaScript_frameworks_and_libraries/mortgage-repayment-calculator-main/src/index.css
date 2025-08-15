@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: hsl(61, 70%, 52%);
+  --color-secondary: hsl(4, 69%, 50%);
+
+  --color-White: hsl(0, 0%, 100%);
+  --color-Slate-100: hsl(202, 86%, 94%);
+  --color-Slate-300: hsl(203, 41%, 72%);
+  --color-Slate-500: hsl(200, 26%, 54%);
+  --color-Slate-700: hsl(200, 24%, 40%);
+  --color-Slate-900: hsl(202, 55%, 16%);
+
+  --color-primary-hover: hsla(61, 70%, 52%, 0.7);
+  --color-primary-checked: hsla(61, 70%, 52%, 0.2);
+
+  --font-Jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+:root {
+  --primary: hsl(61, 70%, 52%);
+  --secondary: hsl(4, 69%, 50%);
+
+  --White: hsl(0, 0%, 100%);
+  --Slate-100: hsl(202, 86%, 94%);
+  --Slate-300: hsl(203, 41%, 72%);
+  --Slate-500: hsl(200, 26%, 54%);
+  --Slate-700: hsl(200, 24%, 40%);
+  --Slate-900: hsl(202, 55%, 16%);
+}

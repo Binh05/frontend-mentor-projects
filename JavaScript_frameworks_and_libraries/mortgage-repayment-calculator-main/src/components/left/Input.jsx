@@ -1,0 +1,44 @@
+import clsx from "clsx";
+import { ResultContext } from "../../stores/ResultContext";
+import { useContext } from "react";
+
+export default function Input({
+  title,
+  h = 2,
+  position = "left",
+  text = "",
+  setData,
+}) {
+  return (
+    <div className="w-full">
+      <p className="text-Slate-500 mb-2 font-[500]">{title}</p>
+      <div className="relative">
+        <input
+          min={0}
+          type="number"
+          className={clsx(
+            "peer border-Slate-300 text-Slate-700 w-full rounded-xs border-[1.5px] font-bold outline-none",
+            "hover:border-Slate-700 focus:border-primary",
+            "appearance-none [&::-webkit-inner-spin-button]:appearance-none",
+            position === "left" ? "pl-14" : "pl-4",
+          )}
+          style={{ height: `${h}rem` }}
+          onChange={setData}
+        />
+        <div
+          className={clsx(
+            "bg-Slate-100 absolute top-[2.5%] h-[96%] px-4",
+            position === "right" && "right-[0.05rem]",
+            position === "left" && "left-[0.05rem]",
+            "flex items-center",
+            "peer-focus:bg-primary",
+          )}
+        >
+          <p className="text-Slate-700 peer-focus:text-Slate-900 font-bold">
+            {text}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
