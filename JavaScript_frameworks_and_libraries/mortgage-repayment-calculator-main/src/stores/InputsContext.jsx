@@ -4,9 +4,9 @@ const InputsContext = createContext();
 
 function InputsProvider({ children }) {
   const inputs = useRef({
-    amount: 0,
-    term: 0,
-    rate: 0,
+    amount: "",
+    term: "",
+    rate: "",
     type: "",
   });
 

@@ -1,32 +1,64 @@
 import Input from "./Input";
 import RadioInput from "./RadioInput";
 import clsx from "clsx";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { InputsContext } from "../../stores/InputsContext";
 import { ResultContext } from "../../stores/ResultContext";
 
 export default function () {
   const inputs = useContext(InputsContext);
   const result = useContext(ResultContext);
+  const [emptyAmount, setEmptyAmount] = useState(false);
+  const [emptyTerm, setEmptyTerm] = useState(false);
+  const [emptyRate, setEmptyRate] = useState(false);
+  const [emptyType, setEmptyType] = useState(false);
 
   const getAmount = (e) => {
     inputs.current.amount = e.target.value;
+    setEmptyAmount(false);
   };
 
   const getTerm = (e) => {
     inputs.current.term = e.target.value;
+    setEmptyTerm(false);
   };
 
   const getRate = (e) => {
     inputs.current.rate = e.target.value;
+    setEmptyRate(false);
   };
 
   const getType = (e) => {
     inputs.current.type = e.target.value;
+    setEmptyType(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    let emptyInput = false;
+
+    if (inputs.current.amount === "") {
+      setEmptyAmount(true);
+      emptyInput = true;
+    } else setEmptyAmount(false);
+
+    if (inputs.current.term === "") {
+      setEmptyTerm(true);
+      emptyInput = true;
+    } else setEmptyTerm(false);
+
+    if (inputs.current.rate === "") {
+      setEmptyRate(true);
+      emptyInput = true;
+    } else setEmptyRate(false);
+
+    if (inputs.current.type === "") {
+      setEmptyType(true);
+      emptyInput = true;
+    } else setEmptyType(false);
+
+    if (emptyInput) return;
 
     const r = inputs.current.rate / 100 / 12;
     const n = inputs.current.term * 12;
@@ -41,11 +73,19 @@ export default function () {
     monthly = monthly.toFixed(2);
 
     result.setResult({ monthly, total });
-    console.log(monthly);
+    console.log(inputs.current);
   };
 
   const clearAll = () => {
     result.setResult(null);
+    setEmptyAmount(false);
+    setEmptyRate(false);
+    setEmptyTerm(false);
+    setEmptyType(false);
+    inputs.current.amount = "";
+    inputs.current.term = "";
+    inputs.current.rate = "";
+    inputs.current.type = "";
   };
 
   return (
@@ -76,6 +116,7 @@ export default function () {
           h={2.5}
           text={"£"}
           setData={getAmount}
+          empty={emptyAmount}
         />
         <div
           className={clsx(
@@ -89,6 +130,7 @@ export default function () {
             title={"Mortgage Term"}
             text="years"
             setData={getTerm}
+            empty={emptyTerm}
           />
           <Input
             h={3}
@@ -96,6 +138,7 @@ export default function () {
             title={"Interest Rate"}
             text="%"
             setData={getRate}
+            empty={emptyRate}
           />
         </div>
         <div className="space-y-2">
@@ -114,6 +157,11 @@ export default function () {
               getData={getType}
             />
           </div>
+          {emptyType && (
+            <p className="text-secondary text-sm font-bold">
+              This field is required
+            </p>
+          )}
         </div>
         <button
           type="submit"
