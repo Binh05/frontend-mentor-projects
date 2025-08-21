@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-Dark-Mode-Elements: hsl(209, 23%, 22%);
+  --color-Dark-Mode-Background: hsl(207, 26%, 17%);
+  --color-Light-Mode-Text: hsl(200, 15%, 8%);
+  --color-Light-Mode-Input: hsl(0, 0%, 50%);
+  --color-Light-Mode-Background: hsl(0, 0%, 99%);
+  --color-Dark-Mode-Text: hsl(0, 100%, 100%);
+  --color-Light-Mode-Elements: hsl(0, 100%, 100%);
+
+  --font-nuni: "Nunito Sans", sans-serif;
+  --Homepage-Items: 14px;
+  --Detail-Page: 16px;
+
+  --font-weight-Regular: 300;
+  --font-weight-SemiBold: 600;
+  --font-weight-Bold: 800;
+}
+
+:root {
+  --color-Dark-Mode-Elements: hsl(209, 23%, 22%);
+  --color-Dark-Mode-Background: hsl(207, 26%, 17%);
+  --color-Light-Mode-Text: hsl(200, 15%, 8%);
+  --color-Light-Mode-Input: hsl(0, 0%, 50%);
+  --color-Light-Mode-Background: hsl(0, 0%, 99%);
+  --color-Dark-Mode-Text: hsl(0, 100%, 100%);
+  --color-Light-Mode-Elements: hsl(0, 100%, 100%);
+
+  --font-nuni: "Nunito Sans", sans-serif;
+  --Homepage-Items: 14px;
+  --Detail-Page: 16px;
+}
