@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { DataContext } from "@/stores/DataContext";
+import { useState, useRef } from "react";
 
 export default function SearchField() {
   return (
@@ -11,30 +10,39 @@ export default function SearchField() {
 }
 
 function Filter() {
-  const data = useContext(DataContext);
+  const [selecting, setSelecting] = useState(false);
+  const [selectValue, setSelectValue] = useState("Filter by Region");
+  const regions = useRef(["Africa", "America", "Asia", "Europe", "Oceania"]);
 
   return (
     <div className="mx-9 mt-21 inline-block w-6/12 rounded-lg">
       <button
         name="region"
         id="region"
-        className="bg-Light-Mode-Elements font-Regular flex h-26 w-full cursor-pointer items-center justify-between rounded-lg px-14 text-xl shadow-lg"
+        className="bg-Light-Mode-Elements flex h-26 w-full cursor-pointer items-center justify-between rounded-lg px-14 text-xl shadow-lg"
+        onClick={() => setSelecting(!selecting)}
       >
-        Filter by Region
+        {selectValue}
         <ArrowDown />
       </button>
-      <ul className="bg-Light-Mode-Elements mt-2 max-h-[18.25rem] space-y-6 overflow-y-auto rounded-xl py-8 shadow-2xl">
-        {data.map((data) => (
-          <li className="font-Regular px-14 text-xl">
-            <button
-              type="button"
-              className="h-full w-full cursor-pointer text-left"
-            >
-              {data.name}
-            </button>
-          </li>
-        ))}
-      </ul>
+      {selecting && (
+        <ul className="bg-Light-Mode-Elements absolute mt-3 w-6/12 rounded-xl py-5 shadow-2xl">
+          {regions.current.map((region) => (
+            <li className="text-xl">
+              <button
+                type="button"
+                className="h-full w-full cursor-pointer px-14 py-3 text-left"
+                onClick={(e) => {
+                  setSelectValue(region);
+                  setSelecting(false);
+                }}
+              >
+                {region}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

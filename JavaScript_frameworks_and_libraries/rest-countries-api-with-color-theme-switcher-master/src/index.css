@@ -18,6 +18,10 @@
   --font-weight-Bold: 800;
 }
 
+body {
+  @apply font-Regular;
+}
+
 :root {
   --color-Dark-Mode-Elements: hsl(209, 23%, 22%);
   --color-Dark-Mode-Background: hsl(207, 26%, 17%);
