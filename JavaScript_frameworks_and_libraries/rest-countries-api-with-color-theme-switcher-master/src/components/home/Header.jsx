@@ -3,7 +3,11 @@ export function Header() {
     <div>
       <div className="bg-Light-Mode-Elements flex h-40 items-center justify-between px-9 shadow-md">
         <h1 className="font-Bold text-2xl">Where in the world?</h1>
-        <button type="button" className="flex cursor-pointer gap-3">
+        <button
+          type="button"
+          onClick={() => document.documentElement.classList.toggle("dark")}
+          className="flex cursor-pointer gap-3"
+        >
           <MoonIcon />
           <p className="font-SemiBold">Dark Mode</p>
         </button>

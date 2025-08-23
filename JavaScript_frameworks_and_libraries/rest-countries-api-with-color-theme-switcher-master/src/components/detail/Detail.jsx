@@ -21,7 +21,7 @@ export default function Detail() {
   return (
     <>
       <Header />
-      <div className="mt-20 mb-30 px-15">
+      <div className="mt-20 px-15">
         <Link
           to={"/"}
           type="button"
@@ -57,9 +57,9 @@ export default function Detail() {
             <ItemList title="Currencies:" content={current}></ItemList>
             <ItemList title="Languages:" content={lan}></ItemList>
           </ul>
-          <div className="my-14">
+          <div className="mt-14 pb-30">
             <p className="font-SemiBold text-2xl">Border Countries:</p>
-            <div className="my-8 flex flex-wrap gap-8">
+            <div className="mt-8 flex flex-wrap gap-8">
               {data.borders &&
                 data.borders.map((b) => {
                   const country = countries.find(
@@ -77,7 +77,7 @@ export default function Detail() {
 
 function ItemCard({ content }) {
   return (
-    <div className="rounded-sm bg-white px-16 py-4 text-2xl shadow-[0_0_0.5rem_rgba(0,0,0,0.4)]">
+    <div className="bg-Light-Mode-Elements rounded-sm px-16 py-4 text-2xl shadow-[0_0_0.5rem_rgba(0,0,0,0.4)]">
       <p>{content}</p>
     </div>
   );

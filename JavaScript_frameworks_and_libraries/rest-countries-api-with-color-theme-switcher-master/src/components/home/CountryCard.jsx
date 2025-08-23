@@ -4,16 +4,16 @@ export default function CountryCard({ data }) {
   return (
     <Link
       to={`/country/${data.alpha3Code}`}
-      className="bg-Light-Mode-Elements max-w-[32.25rem] rounded-lg shadow-lg"
+      className="bg-Light-Mode-Elements max-w-[32.25rem] rounded-lg shadow-lg md:w-73"
     >
-      <div className="rounded-lg">
+      <div className="rounded-lg md:max-h-43">
         <img
           src={data.flag}
           alt={data.name}
-          className="max-w-100% h-auto rounded-t-lg"
+          className="w-full rounded-t-lg object-cover md:max-h-43"
         />
       </div>
-      <div className="p-13">
+      <div className="p-13 md:py-8">
         <h1 className="font-Bold mb-6 text-3xl">{data.name}</h1>
         <ul className="space-y-1">
           <ItemList
