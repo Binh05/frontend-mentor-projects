@@ -16,34 +16,36 @@ function Filter({ filter }) {
 
   return (
     <div className="mt-21 inline-block rounded-lg md:mt-0">
-      <button
-        name="region"
-        id="region"
-        className="bg-Light-Mode-Elements flex h-26 w-full cursor-pointer items-center justify-between gap-16 rounded-lg px-14 text-xl shadow-lg"
-        onClick={() => setSelecting(!selecting)}
-      >
-        {selectValue}
-        <ArrowDown />
-      </button>
-      {selecting && (
-        <ul className="bg-Light-Mode-Elements absolute mt-3 w-6/12 rounded-xl py-5 shadow-2xl">
-          {regions.current.map((region) => (
-            <li key={region} className="text-xl">
-              <button
-                type="button"
-                className="h-full w-full cursor-pointer px-14 py-3 text-left"
-                onClick={(e) => {
-                  filter(region);
-                  setSelectValue(region);
-                  setSelecting(false);
-                }}
-              >
-                {region}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className="relative">
+        <button
+          name="region"
+          id="region"
+          className="bg-Light-Mode-Elements flex h-26 w-full cursor-pointer items-center justify-between gap-16 rounded-lg px-14 text-xl shadow-lg"
+          onClick={() => setSelecting(!selecting)}
+        >
+          {selectValue}
+          <ArrowDown />
+        </button>
+        {selecting && (
+          <ul className="bg-Light-Mode-Elements absolute mt-3 w-full rounded-xl py-5 shadow-2xl">
+            {regions.current.map((region) => (
+              <li key={region} className="text-xl">
+                <button
+                  type="button"
+                  className="h-full w-full cursor-pointer px-14 py-3 text-left"
+                  onClick={(e) => {
+                    filter(region);
+                    setSelectValue(region);
+                    setSelecting(false);
+                  }}
+                >
+                  {region}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 }
