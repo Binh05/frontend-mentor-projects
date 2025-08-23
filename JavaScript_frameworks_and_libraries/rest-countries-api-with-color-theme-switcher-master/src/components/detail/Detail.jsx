@@ -30,7 +30,7 @@ export default function Detail() {
           <ArrowLeft />
           Back
         </Link>
-        <div className="mt-32">
+        <div className="mt-32 md:flex md:gap-16">
           <div className="max-h-[29rem] overflow-y-hidden">
             <img
               src={data.flag}
@@ -38,35 +38,47 @@ export default function Detail() {
               className="h-full w-full object-cover"
             />
           </div>
-          <h1 className="font-Bold mt-28 mb-10 text-[2.5rem]">{data.name}</h1>
-          <ul className="mb-14">
-            <ItemList title="Native Name:" content={data.nativeName}></ItemList>
-            <ItemList
-              title="Population:"
-              content={data.population.toLocaleString()}
-            ></ItemList>
-            <ItemList title="Region:" content={data.region}></ItemList>
-            <ItemList title="Sub Region:" content={data.subregion}></ItemList>
-            <ItemList title="Capital:" content={data.capital}></ItemList>
-          </ul>
-          <ul>
-            <ItemList
-              title="Top Level Domain:"
-              content={data.topLevelDomain}
-            ></ItemList>
-            <ItemList title="Currencies:" content={current}></ItemList>
-            <ItemList title="Languages:" content={lan}></ItemList>
-          </ul>
-          <div className="mt-14 pb-30">
-            <p className="font-SemiBold text-2xl">Border Countries:</p>
-            <div className="mt-8 flex flex-wrap gap-8">
-              {data.borders &&
-                data.borders.map((b) => {
-                  const country = countries.find(
-                    (c) => c.alpha3Code === b,
-                  ).name;
-                  return <ItemCard key={country} content={country} />;
-                })}
+          <div>
+            <h1 className="font-Bold mt-28 mb-6 text-[2.5rem] md:mt-10 md:text-3xl">
+              {data.name}
+            </h1>
+            <div className="md:flex md:gap-24">
+              <ul className="mb-14 md:mb-11">
+                <ItemList
+                  title="Native Name:"
+                  content={data.nativeName}
+                ></ItemList>
+                <ItemList
+                  title="Population:"
+                  content={data.population.toLocaleString()}
+                ></ItemList>
+                <ItemList title="Region:" content={data.region}></ItemList>
+                <ItemList
+                  title="Sub Region:"
+                  content={data.subregion}
+                ></ItemList>
+                <ItemList title="Capital:" content={data.capital}></ItemList>
+              </ul>
+              <ul>
+                <ItemList
+                  title="Top Level Domain:"
+                  content={data.topLevelDomain}
+                ></ItemList>
+                <ItemList title="Currencies:" content={current}></ItemList>
+                <ItemList title="Languages:" content={lan}></ItemList>
+              </ul>
+            </div>
+            <div className="mt-14 pb-30 text-2xl md:mt-0 md:flex md:flex-wrap md:text-xl">
+              <p className="font-SemiBold">Border Countries:</p>
+              <div className="mt-8 flex flex-wrap gap-8">
+                {data.borders &&
+                  data.borders.map((b) => {
+                    const country = countries.find(
+                      (c) => c.alpha3Code === b,
+                    ).name;
+                    return <ItemCard key={country} content={country} />;
+                  })}
+              </div>
             </div>
           </div>
         </div>
@@ -77,7 +89,7 @@ export default function Detail() {
 
 function ItemCard({ content }) {
   return (
-    <div className="bg-Light-Mode-Elements rounded-sm px-16 py-4 text-2xl shadow-[0_0_0.5rem_rgba(0,0,0,0.4)]">
+    <div className="bg-Light-Mode-Elements rounded-sm px-16 py-4 shadow-[0_0_0.5rem_rgba(0,0,0,0.4)]">
       <p>{content}</p>
     </div>
   );
@@ -85,7 +97,7 @@ function ItemCard({ content }) {
 
 function ItemList({ title, content }) {
   return (
-    <p className="text-2xl leading-13">
+    <p className="text-2xl leading-13 md:text-xl">
       <span className="font-SemiBold">{title}</span> {content}
     </p>
   );

@@ -4,7 +4,7 @@ export default function CountryCard({ data }) {
   return (
     <Link
       to={`/country/${data.alpha3Code}`}
-      className="bg-Light-Mode-Elements max-w-[32.25rem] rounded-lg shadow-lg md:w-73"
+      className="bg-Light-Mode-Elements max-w-[32.25rem] rounded-lg shadow-lg md:w-74"
     >
       <div className="rounded-lg md:max-h-43">
         <img
